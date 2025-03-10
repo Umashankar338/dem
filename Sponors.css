@@ -1,0 +1,253 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(1, 1, 6);
+  color: white;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32 32"><text x="0" y="24" font-size="24" fill="yellow">⚡</text></svg>'), auto;
+}
+
+/* Header Styles */
+.header-area {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 5px 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out;
+  animation: slideDown 0.6s ease-in-out;
+}
+
+.header-area:hover {
+  animation: pulseGlow 1.5s infinite alternate;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 60px;
+}
+
+/* Logo */
+.logo img {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Navbar */
+.navbar {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar a:hover {
+  background-color: yellow;
+  color: black;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: yellow;
+  transition: all 0.4s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  background: none;
+  border: none;
+}
+
+/* Sponsors Section */
+.sponsors {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.sponsor-tier {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+/* Sponsor Colors */
+.sponsors h2.platinum-title {
+  color: #00FFFF;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+.sponsors h2.gold-title {
+  color: #FFD700;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.5);
+}
+
+.sponsors h2.silver-title {
+  color: #C0C0C0;
+  text-shadow: 0 0 15px rgba(192, 192, 192, 0.8), 0 0 30px rgba(192, 192, 192, 0.5);
+}
+
+.sponsor-img {
+  width: 300px;
+  height: auto;
+  padding: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.sponsor-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px yellow, 0 0 25px rgba(255, 255, 0, 0.8);
+}
+
+.platinum .sponsor-img:hover {
+  box-shadow: 0 0 15px cyan, 0 0 25px rgba(0, 255, 255, 0.8);
+}
+
+.gold .sponsor-img:hover {
+  box-shadow: 0 0 15px gold, 0 0 25px rgba(255, 215, 0, 0.8);
+}
+
+.silver .sponsor-img:hover {
+  box-shadow: 0 0 15px silver, 0 0 25px rgba(192, 192, 192, 0.8);
+}
+
+/* Footer */
+.footer-area {
+  background-color: #060606;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.social-media {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon {
+  font-size: 30px;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  color: gold;
+}
+
+@media screen and (max-width: 768px) {
+  /* Hamburger Icon */
+  .hamburger {
+      display: block;
+      font-size: 28px;
+      position: absolute;
+      top: 15px;
+      right: 15px; /* Visible by default */
+      z-index: 1000;
+      padding: 10px;
+      cursor: pointer;
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Smooth bounce effect */
+  }
+
+  /* Moves slightly left and scales up when active */
+  .hamburger.active {
+      transform: translateX(-12px) scale(1.1); /* Smooth leftward movement with slight zoom */
+  }
+
+  /* Navigation Menu */
+  .navbar {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      right: -100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      text-align: center;
+      padding: 10px 0;
+      opacity: 0;
+      transform: translateX(100px);
+      transition: right 0.5s ease-out, opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  /* When menu opens */
+  .navbar.active {
+      right: 0;
+      opacity: 1;
+      transform: translateX(0);
+  }
+
+  /* Navbar Links */
+  .navbar a {
+      display: block;
+      padding: 15px;
+      border-bottom: 0.9px solid rgba(255, 255, 255, 0.2);
+      width: 100%;
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Hover Effect */
+  .navbar a:hover {
+      background-color: yellow;
+      color: black;
+      transform: scale(1.05);
+  }
+
+  /* Blur Background When Menu is Open */
+  .menu-open::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 999;
+  }
+}

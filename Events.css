@@ -1,0 +1,532 @@
+html {
+  scroll-behavior: smooth;
+}
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(1, 1, 6);
+  color: white;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32 32"><text x="0" y="24" font-size="24" fill="yellow">⚡</text></svg>'), auto;
+
+}
+
+/* Header Styles */
+.header-area {
+  padding: 5px 0; /* Reduce padding to decrease header height */
+}
+
+.header {
+  padding: 0 15px; /* Reduce left and right padding */
+  height: 60px; /* Set a fixed height if needed */
+}
+
+/* Reduce Logo Size */
+.logo img {
+  width: 80px; /* Adjust to your preferred size */
+  height: 80px; /* Maintain aspect ratio */
+}
+/* Header Styles */
+.header-area {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3); /* Lighter background for better blur effect */
+  backdrop-filter: blur(10px); /* Apply blur effect */
+  padding: 5px 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo img {
+  width: 100px;
+}
+
+/* Navbar */
+.navbar {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+  background-color: yellow;
+  color: black;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Sidebar and Event Cards Layout */
+.layout {
+  display: flex;
+  margin-top: 120px;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #000000;
+  padding: 20px;
+}
+
+.slideshow-bar {
+  list-style: none;
+  padding: 0;
+}
+
+.slideshow-bar li {
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  background-color: #444;
+  transition: background-color 0.3s ease;
+}
+
+.slideshow-bar li:hover {
+  background-color: #666;
+}
+
+.slideshow-bar li.active {
+  background-color: #FFD700;
+  color: #000;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Team Cards */
+.team-card {
+  background-color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  text-align: center;
+  width: 200px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+/* Hover Effect for Team Cards */
+.team-card:hover {
+  transform: scale(1.05);
+  background-color: #444;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Title Styling */
+.team-card h3 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #FFD700;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for title */
+.team-card:hover h3 {
+  color: #fff;
+}
+
+/* Event Card Details */
+.team-card p {
+  font-size: 1.2em;
+  color: #ccc;
+}
+
+/* Hover Effect for Paragraph */
+.team-card:hover p {
+  color: #FFD700;
+  font-size: 1.3em;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.modal-content {
+  max-width: 80%;
+  width: 600px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal-caption {
+  font-size: 1.2em;
+  color: #FFD700;
+  margin-top: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Close Button */
+.close {
+  color: #fff;
+  font-size: 35px;
+  font-weight: bold;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #FFD700;
+  transform: scale(1.2);
+}
+
+/* Footer Styling */
+.footer-area {
+  background-color: #060606;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* Social Media Icon Styling */
+.social-media {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon {
+  font-size: 40px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect: Scale and Color Change */
+.social-icon:hover {
+  transform: scale(1.3);
+  color: gold;
+}
+
+.social-icon:hover i {
+  animation: shake 0.6s ease-in-out infinite;
+}
+
+/* Icon Specific Hover Effects */
+.social-icon i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Keyframe animation for shake effect */
+@keyframes shake {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(0); }
+  75% { transform: rotate(-10deg); }
+  100% { transform: rotate(0); }
+}
+
+footer p {
+  margin-top: 8px;
+  font-size: 23px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .layout {
+      flex-direction: column;
+      align-items: center;
+      margin-top: 80px;
+  }
+
+  .sidebar {
+      width: 100%;
+      padding: 15px;
+      text-align: center;
+  }
+
+  .slideshow-bar li {
+      display: inline-block;
+      padding: 8px 12px;
+      margin: 5px;
+  }
+
+  .content {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .team-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .team-card {
+      width: 90%;
+  }
+
+  .yt-video {
+      width: 100%;
+      height: 250px;
+  }
+
+  .modal-content {
+      width: 90%;
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .navbar {
+      display: none;
+      flex-direction: column;
+      background-color: black;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      text-align: center;
+  }
+
+  .navbar.active {
+      display: flex;
+  }
+
+  .hamburger {
+      display: block;
+  }
+
+  .info-section {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .info-text, .yt-video-container {
+      width: 100%;
+      padding: 0;
+  }
+
+  .yt-video {
+      height: 250px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .yt-video {
+      height: 200px;
+  }
+
+  .social-icon {
+      font-size: 25px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .video-container {
+      width: 100%;
+      height: auto; /* Allow height to adjust */
+      margin-top: 50px; /* Add space for better layout */
+  }
+
+  .bg-video {
+      width: 100%;
+      height: auto; /* Maintain aspect ratio */
+  }
+
+  .yt-video {
+      width: 100%;
+      height: 250px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .yt-video {
+      height: 200px;
+  }
+}
+/* Header Animation */
+@keyframes slideDown {
+  from {
+      transform: translateY(-100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  }
+}
+
+.header-area {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 5px 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease-in-out;
+  
+  /* Slide-in effect when page loads */
+  animation: slideDown 0.6s ease-in-out;
+}
+
+/* Hover effect for glowing header */
+.header-area:hover {
+  animation: pulseGlow 1.5s infinite alternate;
+}
+
+/* Logo animation */
+.logo img {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.logo img:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Navbar Hover Effect */
+.navbar a {
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: yellow;
+  transition: all 0.4s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+@media screen and (max-width: 768px) {
+  /* Hamburger Icon */
+  .hamburger {
+      display: block;
+      font-size: 28px;
+      position: absolute;
+      top: 15px;
+      right: 15px; /* Visible by default */
+      z-index: 1000;
+      padding: 10px;
+      cursor: pointer;
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Smooth bounce effect */
+  }
+
+  /* Moves slightly left and scales up when active */
+  .hamburger.active {
+      transform: translateX(-12px) scale(1.1); /* Smooth leftward movement with slight zoom */
+  }
+
+  /* Navigation Menu */
+  .navbar {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 60px;
+      right: -100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      text-align: center;
+      padding: 10px 0;
+      opacity: 0;
+      transform: translateX(100px);
+      transition: right 0.5s ease-out, opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  /* When menu opens */
+  .navbar.active {
+      right: 0;
+      opacity: 1;
+      transform: translateX(0);
+  }
+
+  /* Navbar Links */
+  .navbar a {
+      display: block;
+      padding: 15px;
+      border-bottom: 0.9px solid rgba(255, 255, 255, 0.2);
+      width: 100%;
+      color: white;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Hover Effect */
+  .navbar a:hover {
+      background-color: yellow;
+      color: black;
+      transform: scale(1.05);
+  }
+
+  /* Blur Background When Menu is Open */
+  .menu-open::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      z-index: 999;
+  }
+}

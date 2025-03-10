@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARK</title>
+    <link rel="icon" href="SPARK 2025 LOGO TRANSPARENT.png">
+    <link rel="stylesheet" href="Home.css"> <!-- Link to CSS file -->
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header-area">
+        <div class="container">
+            <div class="header">
+                <a href="" class="logo">
+                    <img src="SPARK 2025 LOGO TRANSPARENT.png" alt="Logo">
+                </a>
+                <ul class="navbar">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Events.html">Events</a></li>
+                    <li><a href="Team.html">Team</a></li>
+                    <li><a href="Sponsors.html">Sponsors</a></li>
+                    <li><a href="https://forms.gle/1EMRMVrVcojNZx1B9" target="_blank">Register</a></li> 
+                </ul> 
+            </div>
+        </div>
+    </header>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.createElement("div");
+    menuToggle.classList.add("hamburger");
+    menuToggle.innerHTML = "&#9776;"; // Hamburger Icon (☰)
+
+    const header = document.querySelector(".header");
+    const navbar = document.querySelector(".navbar");
+
+    header.appendChild(menuToggle);
+
+    menuToggle.addEventListener("click", function () {
+        navbar.classList.toggle("active");
+        this.classList.toggle("active");
+        document.body.classList.toggle("menu-open");
+
+        // Toggle icon (☰ → ✖)
+        this.innerHTML = navbar.classList.contains("active") ? "&#10006;" : "&#9776;";
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!navbar.contains(event.target) && !menuToggle.contains(event.target)) {
+            navbar.classList.remove("active");
+            menuToggle.classList.remove("active");
+            document.body.classList.remove("menu-open");
+            menuToggle.innerHTML = "&#9776;";
+        }
+    });
+});
+
+      </script>
+      
+      
+
+    <!-- Main Video Container (Below Navbar) -->
+    <div class="video-container">
+        <video autoplay loop muted playsinline class="bg-video">
+            <source src="Spark 2025 Logo Intro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Section with YouTube Video and Description -->
+    <div class="info-section">
+        <!-- Left Side: Description -->
+        <div class="info-text">
+            <h2>SPARK 2025</h2>
+            <p>SPARK is an event that brings together innovation, technology, and creativity. Join us to explore the latest trends in AI, data science, and more.</p>
+        </div>
+
+        <!-- Right Side: YouTube Video -->
+        <div class="yt-video-container">
+            <iframe 
+                class="yt-video" 
+                src="https://www.youtube.com/embed/8LYNOBC_qYg" 
+                title="YouTube video" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+    <!-- Find Us Here Section -->
+<div class="find-us">
+    <h2>Find Us Here</h2>
+    <div class="map-container">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.776351510006!2d80.61551207517038!3d16.44154833198481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35ef4ae2743767%3A0x3f6b9a2b5b6fbb5c!2sKLEF%20Deemed%20To%20Be%20University!5e0!3m2!1sen!2sin!4v1701234567890!5m2!1sen!2sin" 
+            width="100%" height="400" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    
+
+
+    <!-- Footer Section -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="footer">
+                
+                </div>
+                <p>&copy;2025 Spark, KL University. All Rights Reserved.</p>
+                <div class="social-media">
+                    <!-- Social Media Links -->
+                    <a href="https://www.youtube.com/channel/your-channel-id" target="_blank" class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href=https://www.instagram.com/kleee_spark/ target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://github.com/" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/uma-shankar-tippana-0570202b5/" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

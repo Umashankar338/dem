@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARK</title>
+    <link rel="icon" href="SPARK 2025 LOGO TRANSPARENT.png">
+    <link rel="stylesheet" href="About.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.createElement("div");
+    menuToggle.classList.add("hamburger");
+    menuToggle.innerHTML = "&#9776;"; // Hamburger Icon (☰)
+
+    const header = document.querySelector(".header");
+    const navbar = document.querySelector(".navbar");
+
+    header.appendChild(menuToggle);
+
+    menuToggle.addEventListener("click", function () {
+        navbar.classList.toggle("active");
+        this.classList.toggle("active");
+        document.body.classList.toggle("menu-open");
+
+        // Toggle icon (☰ → ✖)
+        this.innerHTML = navbar.classList.contains("active") ? "&#10006;" : "&#9776;";
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!navbar.contains(event.target) && !menuToggle.contains(event.target)) {
+            navbar.classList.remove("active");
+            menuToggle.classList.remove("active");
+            document.body.classList.remove("menu-open");
+            menuToggle.innerHTML = "&#9776;";
+        }
+    });
+});
+
+      </script>
+      
+
+    <!-- Header Area -->
+    <header class="header-area">
+        <div class="container">
+            <div class="header">
+                <a href="Home.html" class="logo">
+                    <img src="SPARK 2025 LOGO TRANSPARENT.png" alt="SPARK Logo">
+                </a>
+                <ul class="navbar">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Events.html">Events</a></li>
+                    <li><a href="Team.html">Team</a></li>
+                    <li><a href="Sponsors.html">Sponsors</a></li>
+                    <li><a href="https://forms.gle/1EMRMVrVcojNZx1B9" target="_blank">Register</a></li> 
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2><span>SPARK FEST</span></h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        Welcome to <strong>SPARK FEST</strong> - where <em>innovation meets inspiration</em>! 
+                        This electrifying festival brings together <strong>visionaries, creators, and tech enthusiasts</strong> 
+                        for an unforgettable experience.
+                    </p>
+                    <p>
+                        With cutting-edge workshops, mind-blowing exhibitions, and thrilling competitions, 
+                        SPARK FEST ignites the passion for technology, creativity, and collaboration.
+                    </p>
+                    <p>
+                        Join us for <strong>a journey of discovery</strong>, connect with industry leaders, and be part of a 
+                        <strong>revolutionary movement</strong> that shapes the future. Let’s spark ideas, break boundaries, 
+                        and <em>illuminate the world with innovation!</em> 🚀
+                    </p>
+                </div>
+                <div class="about-image">
+                    <img src="spark logo 1.png" alt="SPARK FEST Event">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-area">
+        <div class="container">
+            <div class="footer">
+                
+                </div>
+                <p>&copy;2025 Spark ,KL University. All Rights Reserved.</p>
+                <div class="social-media">
+                    <!-- Social Media Links -->
+                    <a href="https://www.youtube.com/channel/your-channel-id" target="_blank" class="social-icon">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href=https://www.instagram.com/kleee_spark/ target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://github.com/" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/uma-shankar-tippana-0570202b5/" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

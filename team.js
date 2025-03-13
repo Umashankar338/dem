@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // ---------------------- TEAM DATA ---------------------- //
 const teamsData = {
     chief: [
-        { name: "UMA", role: "CONVENOR", img: "2.jpg", instagram: "https://www.instagram.com/itz_smart____/" },
+        { name: "UMA", role: "CONVENOR", img: "1.jpg", instagram: "https://www.instagram.com/itz_smart____/" },
         { name: "SHANKAR", role: "CO-CONVENOR", img: "3.jpg", instagram: "https://www.instagram.com/itz_smart____/" },
         { name: "REDDY", role: "CHIEF-EXECUTIVE", img: "2.jpg", instagram: "https://www.instagram.com/itz_smart____/" }
     ],
